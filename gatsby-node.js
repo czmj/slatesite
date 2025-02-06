@@ -51,24 +51,6 @@ exports.createPages = ({ graphql, actions }) => {
         },
       })
     })
-    // Template For work-sub-page
-    const workPage = posts.filter(item => item.node.frontmatter.templateKey === 'work-sub-page')
-    workPage.forEach((post, index) => {
-      const previous = index === workPage.length - 1 ? null : workPage[index + 1].node
-      const next = index === 0 ? null : workPage[index - 1].node
-
-      createPage({
-        path: post.node.fields.slug.split('/').slice(2, -1).join('/') === '' ? '/' : `/${post.node.fields.slug.split('/').slice(2, -1).join('/')}`,
-        component: path.resolve(
-          `src/templates/work-sub-page.js`
-        ),
-        context: {
-          slug: post.node.fields.slug,
-          previous,
-          next,
-        },
-      })
-    })
     // Template For exhibitions-sub-page
     const exhibitionsPage = posts.filter(item => item.node.frontmatter.templateKey === 'exhibitions-sub-page')
     exhibitionsPage.forEach((post, index) => {
@@ -90,7 +72,6 @@ exports.createPages = ({ graphql, actions }) => {
     //   Template For exhibitions-sub-page
     const allPage = posts.filter(item =>
       item.node.frontmatter.templateKey !== 'blog-post' &&
-      item.node.frontmatter.templateKey !== 'work-sub-page' &&
       item.node.frontmatter.templateKey !== 'exhibitions-sub-page')
     allPage.forEach((post, index) => {
       const previous = index === allPage.length - 1 ? null : allPage[index + 1].node

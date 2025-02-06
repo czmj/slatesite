@@ -10,23 +10,21 @@ const IndexPage = ({ data }) => {
     const siteTitle = data.site.siteMetadata.title
     const social = data.site.siteMetadata.social
     const posts = data.allMarkdownRemark.edges
-    let postCounter = 0
 
     return (
         <Layout title={siteTitle} social={social}>
-            <Seo keywords={[`Gatsby Theme`, `Free Gatsby Template`, `Clay Gatsby Theme`]}
+            <Seo keywords={[`Slate Powell`, `Counselling`]}
                 title={data.markdownRemark.frontmatter.title}
                 description={data.markdownRemark.frontmatter.description ||  ''}
                 image={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid.src}
 
             />           
             <div className="post-feed">
-                {posts.map(({ node }) => {
-                    postCounter++
+                {posts.map(({ node }, index) => {
                     return (
                         <PostCard
                             key={node.fields.slug}
-                            count={postCounter}
+                            count={index + 1}
                             node={node}
                             postClass={`post`}
                         />
