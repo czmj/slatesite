@@ -162,6 +162,7 @@ footer.site-foot a {
   align-items: center;
   margin-right: 10px;
   white-space: nowrap;
+  gap: 50px;
 }
 
 .nav {
@@ -210,8 +211,6 @@ footer.site-foot a {
   font-size: 3rem;
   line-height: 1em;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 3px;
 }
 
 .site-head-logo:hover {

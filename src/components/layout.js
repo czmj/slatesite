@@ -4,8 +4,7 @@ import { useLocation } from "@reach/router";
 
 const Layout = (props) => {
   const data = useLocation();
-  const { title, children, social } = props;
-  // const path = props&&props.location&&props.location
+  const { title, children } = props;
 
   const [toggleNav, setToggleNav] = React.useState(false);
   return (
@@ -28,7 +27,12 @@ const Layout = (props) => {
               </div>
             </div>
           </a>
-          <nav id="swup" className="site-head-left">
+          <div className="site-head-left">
+            <Link className="site-head-logo" to={`/`}>
+              {title}
+            </Link>
+          </div>
+          <nav id="swup" className="site-head-right">
             <ul className="nav" role="menu">
               <li
                 className={`nav-home  ${data.pathname === "/" ? "nav-current" : ""} `}
@@ -56,40 +60,6 @@ const Layout = (props) => {
               </li>
             </ul>
           </nav>
-          <div className="site-head-center">
-            <Link className="site-head-logo" to={`/`}>
-              {title}
-            </Link>
-          </div>
-          <div className="site-head-right">
-            <div className="social-links">
-              <Link
-                to={`https://facebook.com/${social.facebook}`}
-                title="Facebook"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Facebook
-              </Link>
-              <Link
-                to={`https://instagram.com/${social.twitter}`}
-                title="Instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </Link>
-
-              <Link
-                to={`https://github.com/lilxyzz/gatsby-clay`}
-                title="Github"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Github
-              </Link>
-            </div>
-          </div>
         </div>
       </header>
       <main id="site-main" className="site-main">
@@ -97,25 +67,6 @@ const Layout = (props) => {
           {children}
         </div>
       </main>
-      <footer className="site-foot">
-        &copy; {new Date().getFullYear()} <Link to={`/`}>{title}</Link> &mdash;
-        Built by {""}
-        <a
-          href="https://travislord.xyz/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Travis Lord
-        </a>
-        {""} & {""}
-        <a
-          href="https://github.com/abdulwaqar844"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Abdul Waqar
-        </a>
-      </footer>
     </div>
   );
 };

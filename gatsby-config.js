@@ -6,7 +6,6 @@ const siteConfig = require("./siteConfig")
 module.exports = {
   siteMetadata: {
     title: siteConfig.name,
-    author: siteConfig.author,
     description: siteConfig.description,
     image: siteConfig.image,
     siteUrl: "https://clay-gatsby.netlify.app/",

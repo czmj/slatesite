@@ -8,11 +8,10 @@ import PostCard from "../components/postCard"
 // eslint-disable-next-line
 const IndexPage = ({ data }) => {
     const siteTitle = data.site.siteMetadata.title
-    const social = data.site.siteMetadata.social
     const posts = data.allMarkdownRemark.edges
 
     return (
-        <Layout title={siteTitle} social={social}>
+        <Layout title={siteTitle}>
             <Seo keywords={[`Slate Powell`, `Counselling`]}
                 title={data.markdownRemark.frontmatter.title}
                 description={data.markdownRemark.frontmatter.description ||  ''}
@@ -39,11 +38,7 @@ export const IndexPageQuery = graphql`
   query IndexPage {
     site {
         siteMetadata {
-          title
-          social{
-            twitter
-            facebook
-          }    
+          title 
         }
       }
       markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {

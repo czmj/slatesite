@@ -1,10 +1,9 @@
 const siteConfig = {
-  name: 'Clay',
-  shortName: 'Clay',
+  name: 'Slate Powell',
+  shortName: 'Slate Powell',
   description: 'Clay - Personal Gatsby Theme',
   url: '/', // Domain of your site without prefix!
   prefix: '/',
-  author: 'Travis Lord & Abdul Waqar',
   twitter: '' ,
   facebook:'',
   github:'',

@@ -36,9 +36,8 @@ const ContactPage = ({ data }, location) => {
   }
 
   const siteTitle = data.site.siteMetadata.title
-  const social = data.site.siteMetadata.social
   return (
-    <Layout title={siteTitle} social={social}>
+    <Layout title={siteTitle}>
       <Seo title={data.markdownRemark.frontmatter.title}
         description={data.markdownRemark.frontmatter.description} 
         image={data.markdownRemark.frontmatter.thumbnail.childImageSharp.gatsbyImageData.images.fallback.src}
@@ -186,10 +185,6 @@ const indexQuery = graphql`
     site {
       siteMetadata {
         title
-        social{
-          twitter
-          facebook
-        }
       }
     }
     markdownRemark(frontmatter: {templateKey: {eq: "contact-page"}}) {

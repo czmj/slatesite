@@ -14,7 +14,7 @@ function Bio() {
     <StaticQuery
       query={bioQuery}
       render={data => {
-        const { author, social } = data.site.siteMetadata
+        const author = 'Joe Bloggs'
         return (
           <section>
             <GatsbyImage
@@ -26,10 +26,6 @@ function Bio() {
             <p>
               Written by <strong>{author}</strong> who lives and works in San
               Francisco building useful things.
-              {` `}
-              <a href={`https://instgram.com/${social.instgram}`}>
-                You should follow him on Instgram
-              </a>
             </p>
           </section>
         );
@@ -42,14 +38,6 @@ const bioQuery = graphql`query BioQuery {
   avatar: file(absolutePath: {regex: "/profile-pic.jpg/"}) {
     childImageSharp {
       gatsbyImageData(width: 50, height: 50, layout: FIXED)
-    }
-  }
-  site {
-    siteMetadata {
-      author
-      social {
-        twitter
-      }
     }
   }
 }`
