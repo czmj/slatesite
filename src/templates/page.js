@@ -9,7 +9,7 @@ import "../utils/normalize.css"
 import "../utils/css/screen.css"
 
 
-const BioPage = (props) => {
+const Page = (props) => {
 
 
     const { markdownRemark: post, site } = props.data;
@@ -50,14 +50,14 @@ const BioPage = (props) => {
     );
 };
 
-BioPage.propTypes = {
+Page.propTypes = {
     data: PropTypes.object.isRequired,
 };
 
-export default BioPage;
+export default Page;
 
-export const BioPageQuery = graphql`
-  query BioPage {
+export const PageQuery = graphql`
+  query Page {
     site {
         siteMetadata {
           title

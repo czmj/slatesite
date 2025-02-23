@@ -1,5 +1,5 @@
 ---
-templateKey: index-page
+templateKey: page
 title: Clay Gatsby Theme 
 image: /img/flowers.jpg
 description: A stunning Gatsby theme designed for captivating image-centric websites, perfect for photographers, portfolios, and blogs.
