@@ -1,5 +1,5 @@
 ---
-templateKey: bio-page
+templateKey: page
 thumbnail: /img/flowers.jpg
 date: 2023-03-02T10:17:05.133Z
 title: Bio

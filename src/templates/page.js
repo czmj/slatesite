@@ -63,7 +63,7 @@ export const BioPageQuery = graphql`
           title
         }
       }
-    markdownRemark(frontmatter: {templateKey: {eq: "bio-page"}}) {
+    markdownRemark(frontmatter: {templateKey: {eq: "page"}}) {
         frontmatter {
           title
           description
