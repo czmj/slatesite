@@ -4,7 +4,9 @@ import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-// eslint-disable-next-line
+
+import "../utils/normalize.css"
+import "../utils/css/screen.css"
 
 
 const BioPage = (props) => {
