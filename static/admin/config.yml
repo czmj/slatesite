@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: master
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
     update: "Update {{collection}} “{{slug}}”"
@@ -33,13 +33,23 @@ collections:
               widget: image,
               choose_url: false,
             }
-          - { label: Title, name: title, widget: string }
+          - { label: "Date", name: "date", widget: "date" }
+          - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "string" }
+          - { label: "Numbering", name: "number", widget: "number" }
+          - {
+              label: "Page Type",
+              name: "pagetype",
+              widget: "select",
+              multiple: true,
+              min: 1,
+              options: [{ label: "Main", value: "main" }],
+            }
           - { label: "Body", name: "body", widget: "markdown" }
 
-      - file: "src/pages/bio/index.md"
-        label: "Bio"
-        name: "bio"
+      - file: "src/pages/about/index.md"
+        label: "About Me"
+        name: "about"
         fields:
           - {
               label: "Template Key",

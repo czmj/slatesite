@@ -11,9 +11,8 @@ const Layout = (props) => {
     <div className={`site-wrapper ${toggleNav ? `site-head-open` : ``}`}>
       <header className="site-head">
         <div className="site-head-container">
-          <a
+          <button
             className="nav-burger"
-            href={`#`}
             onClick={() => setToggleNav(!toggleNav)}
           >
             <div
@@ -26,25 +25,23 @@ const Layout = (props) => {
                 <div className="hamburger-inner" />
               </div>
             </div>
-          </a>
+          </button>
           <div className="site-head-left">
             <Link className="site-head-logo" to={`/`}>
               {title}
             </Link>
           </div>
           <nav id="swup" className="site-head-right">
-            <ul className="nav" role="menu">
+            <ul className="nav">
               <li
                 className={`nav-home  ${data.pathname === "/" ? "nav-current" : ""} `}
-                role="menuitem"
               >
                 <Link to={`/`}>Home</Link>
               </li>
               <li
-                className={`nav-home  ${data.pathname.includes("/bio") ? "nav-current" : ""} `}
-                role="menuitem"
+                className={`nav-home  ${data.pathname.includes("/about") ? "nav-current" : ""} `}
               >
-                <Link to={`/bio`}>Bio</Link>
+                <Link to={`/about`}>About</Link>
               </li>
             </ul>
           </nav>
