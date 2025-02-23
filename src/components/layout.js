@@ -47,12 +47,6 @@ const Layout = (props) => {
                 <Link to={`/bio`}>Bio</Link>
               </li>
               <li
-                className={`nav-home  ${data.pathname.includes("/contact") ? "nav-current" : ""} `}
-                role="menuitem"
-              >
-                <Link to={`/contact`}>Contact</Link>
-              </li>
-              <li
                 className={`nav-home  ${data.pathname.includes("/elements") ? "nav-current" : ""} `}
                 role="menuitem"
               >
